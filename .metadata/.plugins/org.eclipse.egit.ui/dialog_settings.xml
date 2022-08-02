@@ -6,4 +6,7 @@
 		<item value="github.com"/>
 		<item value="bitbucket.org"/>
 	</list>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="file://C:\workspace\Projects\bluemarble"/>
+	</list>
 </section>
