@@ -18,8 +18,8 @@ public class TileController {
 	}
 	
 	@GetMapping("/start")
-	public String insert() {
-		dao.insertTile();
+	public String start() {
+
 		return "map";
 	}
 }
