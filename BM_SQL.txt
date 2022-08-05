@@ -1,0 +1,53 @@
+DROP TABLE BM_PLAYER_INFO;
+DROP TABLE BM_STATUS_INFO;
+DROP TABLE BM_TILE_INFO;
+DROP TABLE BM_TILE_TYPE;
+DROP TABLE BM_FORTUNE_INFO;
+
+-- 플레이어 정보 테이블
+CREATE TABLE BM_PLAYER_INFO
+(
+    PLAYERID    NUMBER(1) PRIMARY KEY,                  -- 플레이어 번호
+    PLAYERNAME  VARCHAR2(20) NOT NULL                   -- 플레이어 이름
+);
+
+-- 플레이어 상태 테이블
+CREATE TABLE BM_STATUS_INFO
+(
+    PLAYERID    NUMBER(1) PRIMARY KEY,                  -- 플레이어 번호
+    CASH        NUMBER    NOT NULL,                     -- 플레이어 소지 현금
+    ASSET       NUMBER    NOT NULL,                     -- 플레이어 전체 자산 (부동산 + 현금 : 0이하가 되면 파산)
+    ROUNDS      NUMBER(5) DEFAULT 0 NOT NULL,           -- 플레이어 주회 횟수
+    LOCATION    NUMBER(3) DEFAULT 0 NOT NULL,           -- 플레이어 위치
+    LIFE        NUMBER(1)                               -- 플레이어 생존 여부 (1 : 살아있음, 0 : 죽음)    
+                DEFAULT 1 
+                NOT NULL CHECK (LIFE IN (1, 0))
+);
+
+CREATE TABLE BM_TILE_INFO
+(
+   TILEID       NUMBER(1) PRIMARY KEY,                  -- 타일 번호
+   TILENAME     VARCHAR2(20) NOT NULL,                  -- 타일 이름 (도시 이름 혹은 이벤트 이름)
+   TILEVALUE    NUMBER(10) NOT NULL,                    -- 타일의 기존 가격
+   BUILDLEV     NUMBER(1)                               -- 타일의 건축물 상황 (0 : 아무것도x, 1 : 땅만, 2 : 별채1, 3 : 별채2... 5 : 호텔) 
+                DEFAULT 0 
+                NOT NULL 
+                CHECK(BUILDLEV IN(0, 1, 2, 3, 4, 5)),
+   TILEOWNER    NUMBER(1),                              -- 타일 주인의 ID 번호
+   TILETYPE     NUMBER(2) NOT NULL                      -- 타일의 타입 (이벤트인지, 도시인지)
+);
+
+CREATE TABLE BM_TILE_TYPE
+(
+    TYPEID      NUMBER(2) PRIMARY KEY,                  -- 타일 타입 ID     
+    TYPENAME    VARCHAR(20) NOT NULL,                   -- 타입 이름        (무인도, 황금열쇠, 시작지점, 우주여행, 도시 등등)
+    TYPEEXPLAIN VARCHAR2(300)                           -- 타입 대한 설명
+);
+
+--개발시 용이하게 하기 위한 테이블
+CREATE TABLE BM_FORTUNE_INFO
+(
+    CARDID      NUMBER(2) PRIMARY KEY,                  -- 행운 열쇠 번호
+    CARDNAME    VARCHAR2(20) NOT NULL,                  -- 행운 열쇠 이름
+    CARDEXPLAIN VARCHAR2(300)                           -- 행운 열쇠 효과 설명
+);
