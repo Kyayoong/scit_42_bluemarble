@@ -3,6 +3,7 @@ DROP TABLE BM_STATUS_INFO;
 DROP TABLE BM_TILE_INFO;
 DROP TABLE BM_TILE_TYPE;
 DROP TABLE BM_FORTUNE_INFO;
+DROP TABLE BM_BANK_STATUS;
 
 -- 플레이어 정보 테이블
 CREATE TABLE BM_PLAYER_INFO
@@ -42,6 +43,13 @@ CREATE TABLE BM_TILE_TYPE
     TYPEID      NUMBER(2) PRIMARY KEY,                  -- 타일 타입 ID     
     TYPENAME    VARCHAR(20) NOT NULL,                   -- 타입 이름        (무인도, 황금열쇠, 시작지점, 우주여행, 도시 등등)
     TYPEEXPLAIN VARCHAR2(300)                           -- 타입 대한 설명
+);
+
+CREATE TABLE BM_BANK_STATUS
+(
+    BANKID      NUMBER(1) PRIMARY KEY,                  -- 은행 계좌 ID
+    BANKNAME    VARCHAR2(20),                           -- 은행 이름
+    AMOUNT      NUMBER(30) DEFAULT 0 NOT NULL           -- 들어있는 돈
 );
 
 --개발시 용이하게 하기 위한 테이블
