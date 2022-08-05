@@ -11,8 +11,8 @@ public class HomeController {
 		return "home";
 	}
 
-	@GetMapping("/map")
+	@GetMapping("/board")
 	public String map() {
-		return "bluemarble-front";
+		return "board";
 	}
 }

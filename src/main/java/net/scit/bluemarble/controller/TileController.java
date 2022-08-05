@@ -20,6 +20,6 @@ public class TileController {
 	@GetMapping("/start")
 	public String start() {
 
-		return "map";
+		return "board";
 	}
 }
