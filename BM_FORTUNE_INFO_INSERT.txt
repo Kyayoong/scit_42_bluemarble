@@ -1,0 +1,38 @@
+INSERT INTO BM_FORTUNE_INFO
+VALUES (1, '무인도', '무인도로 이동하세요! 주사위를 굴려서 같은 번호가 나오면 탈출! (최대 3턴 대기)');
+    
+INSERT INTO BM_FORTUNE_INFO
+VALUES (2, '우주여행', '우주여행으로 이동하세요! 원하는 도시로 이동할 수 있습니다! 누리호에 주인이 있을 경우 비용을 지불해주세요');
+    
+INSERT INTO BM_FORTUNE_INFO
+VALUES (3, '2칸 전진', '앞으로 2칸 이동해주세요!');
+    
+INSERT INTO BM_FORTUNE_INFO
+VALUES (4, '2칸 후진', '뒤로 2칸 이동해주세요!');
+    
+INSERT INTO BM_FORTUNE_INFO
+VALUES (5, '사회기금 수령', '사회기금 수령처로 이동 후 사회기금을 받으세요!');
+    
+INSERT INTO BM_FORTUNE_INFO
+VALUES (6, '노벨평화상', '노벨평화상을 받았습니다! 30만원을 받으세요!');
+    
+INSERT INTO BM_FORTUNE_INFO
+VALUES (7, '복권 당첨', '복권에 당첨됐습니다! 20만원을 받으세요!');
+    
+INSERT INTO BM_FORTUNE_INFO
+VALUES (8, '사회기금 기부', '사회기금에 기부하셨습니다! 10만원 감사합니다!');
+    
+INSERT INTO BM_FORTUNE_INFO
+VALUES (9, '장학금', '장학금 10만원을 받았습니다!');
+
+INSERT INTO BM_FORTUNE_INFO
+VALUES (10, '과속운전!', '과속운전을 하셨습니다! 벌금 5만원을 내세요!');
+    
+INSERT INTO BM_FORTUNE_INFO
+VALUES (11, '병원 입원', '병원에 입원했습니다! 병원비 10만원을 내세요!');
+    
+INSERT INTO BM_FORTUNE_INFO
+VALUES (12, '해외유학', '해외 유학을 갑니다! 20만원을 내세요!');
+    
+INSERT INTO BM_FORTUNE_INFO
+VALUES (13, '반액대매출', '자신의 도시 중 가장 비싼 도시를 건물 포함 전체 가격의 절반 가격으로 판매하세요! (건물도 없애주세요!)');
