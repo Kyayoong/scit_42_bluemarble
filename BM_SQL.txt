@@ -35,7 +35,7 @@ CREATE TABLE BM_TILE_INFO
                 DEFAULT 0 
                 NOT NULL 
                 CHECK(BUILDLEV IN(0, 1, 2, 3, 4, 5)),
-   TILEOWNER    NUMBER(1),                              -- 타일 주인의 ID 번호
+   TILEOWNER    NUMBER(1) DEFAULT 0,                    -- 타일 주인의 ID 번호 (0은 주인 없음)
    TILETYPE     NUMBER(2) NOT NULL                      -- 타일의 타입 (이벤트인지, 도시인지)
 );
 
