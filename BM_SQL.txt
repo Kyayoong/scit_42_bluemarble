@@ -22,8 +22,8 @@ CREATE TABLE BM_PLAYER_SATATUS
 
 CREATE TABLE BM_TILE_INFO
 (
-   TILEID       NUMBER(1) PRIMARY KEY,                  -- 타일 번호
-   TILENAME     VARCHAR2(20) NOT NULL,                  -- 타일 이름 (도시 이름 혹은 이벤트 이름)
+   TILEID       NUMBER(10) PRIMARY KEY,                  -- 타일 번호
+   TILENAME     VARCHAR2(50) NOT NULL,                  -- 타일 이름 (도시 이름 혹은 이벤트 이름)
    TILECOST     NUMBER(20) NOT NULL,                    -- 타일의 구매료
    TILEPASSCOST NUMBER(20) NOT NULL,                    -- 타일의 통행료
    BUILDLEV     NUMBER(1)                               -- 타일의 건축물 상황 (0 : 아무것도x, 1 : 땅만, 2 : 별채1, 3 : 별채2... 5 : 호텔) 
@@ -41,7 +41,7 @@ CREATE TABLE BM_TILE_TYPE
     TYPEEXPLAIN VARCHAR2(300)                           -- 타입 대한 설명
 );
 
-CREATE SEQUENCE TILEID_SEQ;                             -- 타일 ID SEQ
+CREATE SEQUENCE TILEID_SEQ MINVALUE 0;                             -- 타일 ID SEQ
 
 
 CREATE TABLE BM_BANK_STATUS
