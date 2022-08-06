@@ -1,23 +1,18 @@
-DROP TABLE BM_PLAYER_INFO;
-DROP TABLE BM_STATUS_INFO;
+DROP TABLE BM_PLAYER_STATUS;
 DROP TABLE BM_TILE_INFO;
 DROP TABLE BM_TILE_TYPE;
 DROP TABLE BM_FORTUNE_INFO;
 DROP TABLE BM_BANK_STATUS;
+DROP SEQUENCE TILEID_SEQ;
 
--- 플레이어 정보 테이블
-CREATE TABLE BM_PLAYER_INFO
-(
-    PLAYERID    NUMBER(1) PRIMARY KEY,                  -- 플레이어 번호
-    PLAYERNAME  VARCHAR2(20) NOT NULL                   -- 플레이어 이름
-);
 
 -- 플레이어 상태 테이블
-CREATE TABLE BM_STATUS_INFO
+CREATE TABLE BM_PLAYER_SATATUS
 (
     PLAYERID    NUMBER(1) PRIMARY KEY,                  -- 플레이어 번호
-    CASH        NUMBER    NOT NULL,                     -- 플레이어 소지 현금
-    ASSET       NUMBER    NOT NULL,                     -- 플레이어 전체 자산 (부동산 + 현금 : 0이하가 되면 파산)
+    PLAYERNAME  VARCHAR2(20),                            -- 플레이어 이름
+    CASH        NUMBER    DEFAULT 3000000 NOT NULL,     -- 플레이어 소지 현금
+    ASSET       NUMBER    DEFAULT 3000000,              -- 플레이어 전체 자산 (부동산 + 현금 : 0이하가 되면 파산)
     ROUNDS      NUMBER(5) DEFAULT 0 NOT NULL,           -- 플레이어 주회 횟수
     LOCATION    NUMBER(3) DEFAULT 0 NOT NULL,           -- 플레이어 위치
     LIFE        NUMBER(1)                               -- 플레이어 생존 여부 (1 : 살아있음, 0 : 죽음)    
@@ -41,10 +36,13 @@ CREATE TABLE BM_TILE_INFO
 
 CREATE TABLE BM_TILE_TYPE
 (
-    TYPEID      NUMBER(2) PRIMARY KEY,                  -- 타일 타입 ID     
-    TYPENAME    VARCHAR(20) NOT NULL,                   -- 타입 이름        (무인도, 황금열쇠, 시작지점, 우주여행, 도시 등등)
+    TYPEID      NUMBER(2) PRIMARY KEY,                  -- 타일 타입 ID (SEQ)    
+    TYPENAME    VARCHAR(20) NOT NULL,                   -- 타입 이름 (무인도, 황금열쇠, 시작지점, 우주여행, 도시 등등)
     TYPEEXPLAIN VARCHAR2(300)                           -- 타입 대한 설명
 );
+
+CREATE SEQUENCE TILEID_SEQ;                             -- 타일 ID SEQ
+
 
 CREATE TABLE BM_BANK_STATUS
 (
