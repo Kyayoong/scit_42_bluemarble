@@ -1,0 +1,19 @@
+INSERT INTO bm_player_status
+(PLAYERID)
+VALUES 
+(1);
+
+INSERT INTO bm_player_status
+(PLAYERID)
+VALUES 
+(2);
+
+INSERT INTO bm_player_status
+(PLAYERID)
+VALUES 
+(3);
+
+INSERT INTO bm_player_status
+(PLAYERID)
+VALUES 
+(4);
