@@ -29,7 +29,8 @@ CREATE TABLE BM_TILE_INFO
 (
    TILEID       NUMBER(1) PRIMARY KEY,                  -- 타일 번호
    TILENAME     VARCHAR2(20) NOT NULL,                  -- 타일 이름 (도시 이름 혹은 이벤트 이름)
-   TILEVALUE    NUMBER(10) NOT NULL,                    -- 타일의 기존 가격
+   TILECOST     NUMBER(20) NOT NULL,                    -- 타일의 구매료
+   TILEPASSCOST NUMBER(20) NOT NULL,                    -- 타일의 통행료
    BUILDLEV     NUMBER(1)                               -- 타일의 건축물 상황 (0 : 아무것도x, 1 : 땅만, 2 : 별채1, 3 : 별채2... 5 : 호텔) 
                 DEFAULT 0 
                 NOT NULL 
