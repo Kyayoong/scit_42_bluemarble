@@ -4,6 +4,7 @@ DROP TABLE BM_TILE_TYPE;
 DROP TABLE BM_FORTUNE_INFO;
 DROP TABLE BM_BANK_STATUS;
 DROP SEQUENCE TILEID_SEQ;
+DROP SEQUENCE TYPEID_SEQ;
 
 
 -- 플레이어 상태 테이블
@@ -33,6 +34,7 @@ CREATE TABLE BM_TILE_INFO
    TILEOWNER    NUMBER(1) DEFAULT 0,                    -- 타일 주인의 ID 번호 (0은 주인 없음)
    TILETYPE     NUMBER(2) NOT NULL                      -- 타일의 타입 (이벤트인지, 도시인지)
 );
+CREATE SEQUENCE TILEID_SEQ MINVALUE 1;                  -- 타일 ID SEQ
 
 CREATE TABLE BM_TILE_TYPE
 (
@@ -40,8 +42,7 @@ CREATE TABLE BM_TILE_TYPE
     TYPENAME    VARCHAR(20) NOT NULL,                   -- 타입 이름 (무인도, 황금열쇠, 시작지점, 우주여행, 도시 등등)
     TYPEEXPLAIN VARCHAR2(300)                           -- 타입 대한 설명
 );
-
-CREATE SEQUENCE TILEID_SEQ MINVALUE 1;                  -- 타일 ID SEQ
+CREATE SEQUENCE TYPEID_SEQ MINVALUE 1;                  -- 타일 타입 ID SEQ;
 
 
 CREATE TABLE BM_BANK_STATUS
