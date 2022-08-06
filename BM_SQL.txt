@@ -7,7 +7,7 @@ DROP SEQUENCE TILEID_SEQ;
 
 
 -- 플레이어 상태 테이블
-CREATE TABLE BM_PLAYER_SATATUS
+CREATE TABLE BM_PLAYER_STATUS
 (
     PLAYERID    NUMBER(1) PRIMARY KEY,                  -- 플레이어 번호
     PLAYERNAME  VARCHAR2(20),                            -- 플레이어 이름
