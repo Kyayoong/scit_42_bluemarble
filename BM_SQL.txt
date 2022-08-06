@@ -14,7 +14,7 @@ CREATE TABLE BM_PLAYER_SATATUS
     CASH        NUMBER    DEFAULT 3000000 NOT NULL,     -- 플레이어 소지 현금
     ASSET       NUMBER    DEFAULT 3000000,              -- 플레이어 전체 자산 (부동산 + 현금 : 0이하가 되면 파산)
     ROUNDS      NUMBER(5) DEFAULT 0 NOT NULL,           -- 플레이어 주회 횟수
-    LOCATION    NUMBER(3) DEFAULT 0 NOT NULL,           -- 플레이어 위치
+    LOCATION    NUMBER(3) DEFAULT 1 NOT NULL,           -- 플레이어 위치
     LIFE        NUMBER(1)                               -- 플레이어 생존 여부 (1 : 살아있음, 0 : 죽음)    
                 DEFAULT 1 
                 NOT NULL CHECK (LIFE IN (1, 0))
@@ -41,7 +41,7 @@ CREATE TABLE BM_TILE_TYPE
     TYPEEXPLAIN VARCHAR2(300)                           -- 타입 대한 설명
 );
 
-CREATE SEQUENCE TILEID_SEQ MINVALUE 0;                             -- 타일 ID SEQ
+CREATE SEQUENCE TILEID_SEQ MINVALUE 1;                  -- 타일 ID SEQ
 
 
 CREATE TABLE BM_BANK_STATUS
