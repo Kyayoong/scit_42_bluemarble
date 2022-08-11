@@ -16,14 +16,11 @@
     <script>
         $(document).ready(function() {
         	/* 플레이어 정보에 마우스 올리면 나오는 창 이벤트 설정 */
-            $('#pl1').on('mouseenter', visibleP1);
-            $('#pl1').on('mouseleave', hiddenP1);
-            $('#pl2').on('mouseenter', visibleP2);
-            $('#pl2').on('mouseleave', hiddenP2);
-            $('#pl3').on('mouseenter', visibleP3);
-            $('#pl3').on('mouseleave', hiddenP3);
-            $('#pl4').on('mouseenter', visibleP4);
-            $('#pl4').on('mouseleave', hiddenP4);
+            $('#pl1').hover(visibleP1, hiddenP1);
+            $('#pl2').hover(visibleP2, visibleP2);
+            $('#pl3').hover(visibleP3, visibleP3);
+            $('#pl4').hover(visibleP4, visibleP4);
+            // test
         })
         function visibleP1(){
             $('#playerInfo1').css('visibility', 'visible');
