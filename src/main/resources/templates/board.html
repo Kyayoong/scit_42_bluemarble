@@ -17,10 +17,9 @@
         $(document).ready(function() {
         	/* 플레이어 정보에 마우스 올리면 나오는 창 이벤트 설정 */
             $('#pl1').hover(visibleP1, hiddenP1);
-            $('#pl2').hover(visibleP2, visibleP2);
-            $('#pl3').hover(visibleP3, visibleP3);
-            $('#pl4').hover(visibleP4, visibleP4);
-            // test
+            $('#pl2').hover(visibleP2, hiddenP2);
+            $('#pl3').hover(visibleP3, hiddenP3);
+            $('#pl4').hover(visibleP4, hiddenP4);
         })
         function visibleP1(){
             $('#playerInfo1').css('visibility', 'visible');
