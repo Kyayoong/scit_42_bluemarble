@@ -9,7 +9,7 @@ body {
     justify-content: center;
     perspective: 1000px;
     color: black;
-    background: #fff000;
+    background: #b0c4de;
 }
 
 .board {
@@ -17,7 +17,7 @@ body {
     grid-template-rows: repeat(8, 9vmin);
     grid-template-columns: repeat(8, 9vmin);
     gap: 1vw;
-    z-index: 10;
+    z-index: 1;
     transform-style: preserve-3d;
     transform: rotateX(60deg) rotateZ(240deg);
 }
@@ -186,7 +186,118 @@ body {
     transform: rotate(90deg);
 }
 
+/* 플레이어 정보창 */
+div.plStatusContainer{
+	width:150px;
+	position: fixed;
+	top: 10%;
+	right: 7%;
+	z-index: 3;
+}
+#pl1{
+	width: 130px;
+	margin: 5px auto;
+	padding-left: 5px;
+	background-color: #ffffff95;
+	border: 1px solid black;
+}
+#pl2{
+	width: 130px;
+	margin: 5px auto;
+	padding-left: 5px;
+	background-color: #ffffff95;
+	border: 1px solid black;
+}
+#pl3{
+	width: 130px;
+	margin: 5px auto;
+	padding-left: 5px;
+	background-color: #ffffff95;
+	border: 1px solid black;
+}
+#pl4{
+	width: 130px;
+	margin: 5px auto;
+	padding-left: 5px;
+	background-color: #ffffff95;
+	border: 1px solid black;
+}
+#playerInfo1{
+    width: 480px;
+    height: 400px;
+    position: fixed;
+    background-color: #ffffff95;
+    top: 25%;
+	right: 30%;
+	z-index: 3;
+	visibility: hidden;
+	border: 1px solid black;
+}
+#playerInfo2{
+    width: 480px;
+    height: 400px;
+    position: fixed;
+    background-color: #ffffff95;
+    top: 25%;
+	right: 30%;
+	z-index: 3;
+	visibility: hidden;
+	border: 1px solid black;
+}
+#playerInfo3{
+    width: 480px;
+    height: 400px;
+    position: fixed;
+    background-color: #ffffff95;
+    top: 25%;
+	right: 30%;
+	z-index: 3;
+	visibility: hidden;
+	border: 1px solid black;
+}
+#playerInfo4{
+    width: 480px;
+    height: 400px;
+    position: fixed;
+    background-color: #ffffff95;
+    top: 25%;
+	right: 30%;
+	z-index: 3;
+	visibility: hidden;
+	border: 1px solid black;
+}
 
+/* 상태 메시지창 */
+div.statusContainer{
+	width: 404px;
+	height: 152px;
+	position: fixed;
+    bottom: -10%;
+    right: 77%;
+    z-index: 3;
+}
+div.statusContainer > textarea {
+    resize: none;
+    background-color: #ffffff95;
+}
+
+/* 채팅 출력/입력 창 (임시) */
+div.chatContainer{
+	width: 404px;
+	height: 152px;
+	position: fixed;
+    bottom: 0%;
+    right: 5%;
+    z-index: 3;
+}
+div.chatContainer > textarea {
+    resize: none;
+    background-color: #ffffff70;
+}
+div.chatContainer>p>input[type="text"]{
+	width: 363px;
+	background-color: #ffffff70;
+}
 #dot {
     position: relative;
     width: 25px;
