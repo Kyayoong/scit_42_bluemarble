@@ -273,7 +273,7 @@ div.statusContainer{
 	height: 152px;
 	position: fixed;
     bottom: -10%;
-    right: 77%;
+    right: 70%;
     z-index: 3;
 }
 div.statusContainer > textarea {
