@@ -149,8 +149,8 @@
 <div class="plStatusContainer">
 	<!-- 정보들은 innerHTML로 수정.-->
 	<div id="pl1">
-		<p th:text="${player.playername}">[Player1]</p>
-		<p th:text="${player.cash}">Cash: </p>
+		<p th:text="|Name: ${player.playername}|">[Player1]</p>
+		<p th:text="|Cash: ${player.cash}|">Cash: </p>
         <p>Rank: </p>
         <p>플레이어 정보 창</p>
 	</div>
