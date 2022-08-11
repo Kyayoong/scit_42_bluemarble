@@ -13,6 +13,7 @@ public class HomeController {
 
 	@GetMapping("/board")
 	public String map() {
+		
 		return "board";
 	}
 }
