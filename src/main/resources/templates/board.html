@@ -49,16 +49,35 @@
         window.onload = function() {
             let dice = document.getElementById("dice");
             let diceTrigger = document.getElementById("diceTrigger");
+            let top;
+            let mousedown;
             dice.addEventListener('click', () => {
-                let value = 3;
-                alert(value);
-            });
-            dice.addEventListener('mousedown', () => {
-                let top = "0%";
-                diceTrigger.style.top = top;
-            });
-            dice.addEventListener('mouseup', () => {
 
+            });
+            // 주사위 버튼 클릭시 게이지 차오르는 이벤트
+            dice.addEventListener('mousedown', () => {
+                top = 100;
+                mousedown = setInterval(() => {
+                    if (top >= 0) {
+                        top -= 1;
+                        diceTrigger.style.top = `${top}%`;
+                    }
+                }, 10);
+            });
+            // 주사위 버튼에서 손을 떼면 주사위 이벤트 트리거 혹은 게이지 떨어뜨리는 이벤트
+            dice.addEventListener('mouseup', () => {
+                clearInterval(mousedown);
+                setInterval(() => {
+                    // if (diceTrigger.style.top <= 0) {
+                    //     //주사위 굴리는 이벤트 실행
+                    //     return;
+                    // }
+                    if (top <= 100) {
+                        top += 1
+                        diceTrigger.style.top = `${top}%`
+                    }
+
+                }, 10);
             });
         }
     </script>
