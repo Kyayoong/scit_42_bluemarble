@@ -44,7 +44,7 @@
 
 <body>
     <div class="board">
-        <div class="tile">1
+    	<div class="tile">1
             <div class="coor"></div>
         </div>
         <div class="tile">2
@@ -87,5 +87,36 @@
             <div id="diceTrigger"></div>
         </div>
     </div>
+
+<!-- 플레이어 정보창 -->
+<div class="plStatusContainer">
+	<!-- div.pl을 반복문으로 실행. 정보들은 innerHTML로 수정.-->
+	<div class="pl">
+		<p>[Player1]</p>
+		<p>Cash: </p>
+        <p>Rank: </p>
+        <p>플레이어 정보 창</p>
+	</div>
+	<div class="pl">
+		<p>[Player1]</p>
+		<p>Cash: </p>
+        <p>Rank: </p>
+        <p>플레이어 정보 창</p>
+	</div>
+</div>
+<!-- 상태메세지 창 -->
+<div class="statusContainer">
+	<textarea id="status" rows="10" cols="55" readonly="readonly">상태 메시지 창</textarea>
+</div>
+
+<!-- 채팅창 (임시) -->
+<!-- <div class="chatContainer">
+<textarea id="chatOutput" rows="10" cols="55" readonly="readonly">채팅창</textarea>
+<p>
+    <input type="text" id="chatInput">
+    <input type="button" id="chatBtn" value="입력">
+</p>
+</div> -->
+
 </body>
 </html>
