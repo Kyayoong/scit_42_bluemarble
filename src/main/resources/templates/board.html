@@ -60,7 +60,6 @@
             // 주사위 버튼 클릭시 게이지 차오르는 이벤트
             dice.addEventListener('mousedown', () => {
                 clearInterval(mouseup);
-                //top = 100;
                 mousedown = setInterval(() => {
                     if (top >= 0) {
                         top -= 1;
@@ -81,7 +80,6 @@
                         top += 1;
                         diceTrigger.style.top = `${top}%`;
                     }
-
                 }, 10);
             });
         }
@@ -102,7 +100,6 @@
 <body>
     <div class="board">
     	<div class="tile">1
-            <div class="coor"></div>
         </div>
         <div class="tile">2
             <div class="coor"></div>

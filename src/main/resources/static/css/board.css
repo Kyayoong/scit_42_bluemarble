@@ -326,6 +326,7 @@ div.chatContainer>p>input[type="text"]{
     width: 12vmin;
     height: 12vmin;
     background-color: black;
+    overflow: hidden;
 }
 #dice > input {
     display: inline-block;
