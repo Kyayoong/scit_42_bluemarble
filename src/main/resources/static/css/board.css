@@ -194,11 +194,76 @@ div.plStatusContainer{
 	right: 7%;
 	z-index: 3;
 }
-div.pl{
+#pl1{
 	width: 130px;
 	margin: 5px auto;
 	padding-left: 5px;
 	background-color: #ffffff95;
+	border: 1px solid black;
+}
+#pl2{
+	width: 130px;
+	margin: 5px auto;
+	padding-left: 5px;
+	background-color: #ffffff95;
+	border: 1px solid black;
+}
+#pl3{
+	width: 130px;
+	margin: 5px auto;
+	padding-left: 5px;
+	background-color: #ffffff95;
+	border: 1px solid black;
+}
+#pl4{
+	width: 130px;
+	margin: 5px auto;
+	padding-left: 5px;
+	background-color: #ffffff95;
+	border: 1px solid black;
+}
+#playerInfo1{
+    width: 480px;
+    height: 400px;
+    position: fixed;
+    background-color: #ffffff95;
+    top: 25%;
+	right: 30%;
+	z-index: 3;
+	visibility: hidden;
+	border: 1px solid black;
+}
+#playerInfo2{
+    width: 480px;
+    height: 400px;
+    position: fixed;
+    background-color: #ffffff95;
+    top: 25%;
+	right: 30%;
+	z-index: 3;
+	visibility: hidden;
+	border: 1px solid black;
+}
+#playerInfo3{
+    width: 480px;
+    height: 400px;
+    position: fixed;
+    background-color: #ffffff95;
+    top: 25%;
+	right: 30%;
+	z-index: 3;
+	visibility: hidden;
+	border: 1px solid black;
+}
+#playerInfo4{
+    width: 480px;
+    height: 400px;
+    position: fixed;
+    background-color: #ffffff95;
+    top: 25%;
+	right: 30%;
+	z-index: 3;
+	visibility: hidden;
 	border: 1px solid black;
 }
 

@@ -12,7 +12,44 @@
         /*}*/
     </style>
     <link rel="stylesheet" th:href="@{/css/board.css}">
+    <script th:src="@{/js/jquery-3.6.0.min.js}"></script>
     <script>
+        $(document).ready(function() {
+        	/* 플레이어 정보에 마우스 올리면 나오는 창 이벤트 설정 */
+            $('#pl1').on('mouseenter', visibleP1);
+            $('#pl1').on('mouseleave', hiddenP1);
+            $('#pl2').on('mouseenter', visibleP2);
+            $('#pl2').on('mouseleave', hiddenP2);
+            $('#pl3').on('mouseenter', visibleP3);
+            $('#pl3').on('mouseleave', hiddenP3);
+            $('#pl4').on('mouseenter', visibleP4);
+            $('#pl4').on('mouseleave', hiddenP4);
+        })
+        function visibleP1(){
+            $('#playerInfo1').css('visibility', 'visible');
+        }
+        function hiddenP1(){
+            $('#playerInfo1').css('visibility', 'hidden');
+        }
+        function visibleP2(){
+            $('#playerInfo2').css('visibility', 'visible');
+        }
+        function hiddenP2(){
+            $('#playerInfo2').css('visibility', 'hidden');
+        }
+        function visibleP3(){
+            $('#playerInfo3').css('visibility', 'visible');
+        }
+        function hiddenP3(){
+            $('#playerInfo3').css('visibility', 'hidden');
+        }
+        function visibleP4(){
+            $('#playerInfo4').css('visibility', 'visible');
+        }
+        function hiddenP4(){
+            $('#playerInfo4').css('visibility', 'hidden');
+        }
+ 
         window.onload = function() {
             let dice = document.getElementById("dice");
             let diceTrigger = document.getElementById("diceTrigger");
@@ -90,20 +127,66 @@
 
 <!-- 플레이어 정보창 -->
 <div class="plStatusContainer">
-	<!-- div.pl을 반복문으로 실행. 정보들은 innerHTML로 수정.-->
-	<div class="pl">
+	<!-- 정보들은 innerHTML로 수정.-->
+	<div id="pl1">
 		<p>[Player1]</p>
 		<p>Cash: </p>
         <p>Rank: </p>
         <p>플레이어 정보 창</p>
 	</div>
-	<div class="pl">
-		<p>[Player1]</p>
+	<div id="pl2">
+		<p>[Player2]</p>
+		<p>Cash: </p>
+        <p>Rank: </p>
+        <p>플레이어 정보 창</p>
+	</div>
+	<div id="pl3">
+		<p>[Player3]</p>
+		<p>Cash: </p>
+        <p>Rank: </p>
+        <p>플레이어 정보 창</p>
+	</div>
+	<div id="pl4">
+		<p>[Player4]</p>
 		<p>Cash: </p>
         <p>Rank: </p>
         <p>플레이어 정보 창</p>
 	</div>
 </div>
+<!-- 숨어있는 정보창 화면 우측 플레이어 정보 마우스 오버시 나오는 창 -->
+<div id="playerInfo1">
+	<div>
+		<p>상세정보 창입니다.</p>
+		<p>건축물 상황, 돈, 턴 수, 등등 대다수의 정보가 출력됩니다.</p>
+		<p>보이나?</p>
+        <p><img th:src="@{/images/mokoko_young.png}" style="width:300px;"></p>
+	</div>
+</div>
+<div id="playerInfo2">
+	<div>
+		<p>상세정보 창입니다.</p>
+		<p>건축물 상황, 돈, 턴 수, 등등 대다수의 정보가 출력됩니다.</p>
+		<p>보이나?</p>
+		<p><img th:src="@{/images/mokoko01.jpg}" style="width:300px;"></p>
+	</div>
+</div>
+<div id="playerInfo3">
+	<div>
+		<p>상세정보 창입니다.</p>
+		<p>건축물 상황, 돈, 턴 수, 등등 대다수의 정보가 출력됩니다.</p>
+		<p>보이나?</p>
+		<p><img th:src="@{/images/mokoko05.png}" style="width:300px;"></p>
+	</div>
+</div>
+<div id="playerInfo4">
+	<div>
+		<p>상세정보 창입니다.</p>
+		<p>건축물 상황, 돈, 턴 수, 등등 대다수의 정보가 출력됩니다.</p>
+		<p>보이나?</p>
+		<p><img th:src="@{/images/mokoko09.png}" style="width:300px;"></p>
+	</div>
+</div>
+
 <!-- 상태메세지 창 -->
 <div class="statusContainer">
 	<textarea id="status" rows="10" cols="55" readonly="readonly">상태 메시지 창</textarea>
