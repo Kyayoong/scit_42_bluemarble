@@ -3,8 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>home.html</title>
+<link rel="stylesheet" th:href="@{/css/home.css}">
+<script>
+function test(){
+	location.href='/bluemarble/board';	
+}
+
+</script>
 </head>
 <body>
-	<a th:href="@{/board}">BLUEMARBLE START!</a>
+<div class="wrapper">
+	<button type="button" id="img_btn" onclick="test()">BLUEMARBLE START!
+	<!-- test -->
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</div>
 </body>
 </html>
