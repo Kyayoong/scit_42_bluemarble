@@ -1,5 +1,7 @@
 package net.scit.bluemarble.service;
 
+import java.util.ArrayList;
+
 import net.scit.bluemarble.vo.Player;
 
 public interface bluemarbleService {
@@ -9,4 +11,10 @@ public interface bluemarbleService {
 	 * @return Player객체
 	 */
 	public Player selectOnePlayer(int playerid);
+	
+	/**
+	 * 모든 플레이어의 정보를 가져온다.
+	 * @return ArrayList, Generic: Player
+	 */
+	public ArrayList<Player> selectAllPlayer();
 }

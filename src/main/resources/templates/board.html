@@ -149,26 +149,26 @@
 <div class="plStatusContainer">
 	<!-- 정보들은 innerHTML로 수정.-->
 	<div id="pl1">
-		<p th:text="|Name: ${player.playername}|">[Player1]</p>
-		<p th:text="|Cash: ${player.cash}|">Cash: </p>
+		<p th:text="|Name: ${player[0].playername}|">[Player1]</p>
+		<p th:text="|Cash: ${player[0].cash}|">Cash: </p>
         <p>Rank: </p>
         <p>플레이어 정보 창</p>
 	</div>
 	<div id="pl2">
-		<p>[Player2]</p>
-		<p>Cash: </p>
+		<p th:text="|Name: ${player[1].playername}|">[Player1]</p>
+		<p th:text="|Cash: ${player[1].cash}|">Cash: </p>
         <p>Rank: </p>
         <p>플레이어 정보 창</p>
 	</div>
 	<div id="pl3">
-		<p>[Player3]</p>
-		<p>Cash: </p>
+		<p th:text="|Name: ${player[2].playername}|">[Player1]</p>
+		<p th:text="|Cash: ${player[2].cash}|">Cash: </p>
         <p>Rank: </p>
         <p>플레이어 정보 창</p>
 	</div>
 	<div id="pl4">
-		<p>[Player4]</p>
-		<p>Cash: </p>
+		<p th:text="|Name: ${player[3].playername}|">[Player1]</p>
+		<p th:text="|Cash: ${player[3].cash}|">Cash: </p>
         <p>Rank: </p>
         <p>플레이어 정보 창</p>
 	</div>
