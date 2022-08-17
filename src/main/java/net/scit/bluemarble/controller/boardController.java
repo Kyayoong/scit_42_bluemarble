@@ -20,7 +20,7 @@ public class boardController {
 	
 	@GetMapping("/board")
 	public String map(Model model) {
-		//처음 시작시, 첫번째 턴의 유저 정보를 가져온다
+		//처음 시작시, 전체 유저 정보를 가져온다
 		ArrayList<Player> player = service.selectAllPlayer();
 		log.debug("가져온 값 : {}", player);
 		
