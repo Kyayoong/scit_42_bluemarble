@@ -41,7 +41,6 @@ body {
     grid-column: 2;
     transform: rotate(180deg);
 }
-
 .tile:nth-child(3) {
     grid-row: 1;
     grid-column: 3;
@@ -309,13 +308,14 @@ div.chatContainer>p>input[type="text"]{
     position: fixed;
 }
 
-.coor {
+.hotel {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%) rotateX(90deg);
     width: 20px;
     height: 20px;
+    /* 배열로 각 건물 level에 따라 표기되는 그림이 달라짐. */
     background: url('../images/hotel.png');
     background-size: contain;
 }
@@ -346,4 +346,58 @@ div.chatContainer>p>input[type="text"]{
     left: 0;
     width: 100%;
     height: 100%;
+}
+/******************** 도시명 표기 *********************/
+.city-name {
+    background-color: #ffffff90;
+    font-size: 1vmin;
+    width: 8.6vmin;
+    height: 2vmin;
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/*************** 플레이어 말 ***************/
+.player-mark {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    height: 25%;
+}
+.player-mark1 {
+    display: inline-block;
+    width: 0.8vmin;
+    height: 0.8vmin;
+    background-color: blue;
+    border-radius: 50%;
+}
+.player-mark2 {
+    display: inline-block;
+    width: 0.8vmin;
+    height: 0.8vmin;
+    background-color: red;
+    border-radius: 50%;
+}
+.player-mark3 {
+    display: inline-block;
+    width: 0.8vmin;
+    height: 0.8vmin;
+    background-color: green;
+    border-radius: 50%;
+}
+.player-mark4 {
+    display: inline-block;
+    width: 0.8vmin;
+    height: 0.8vmin;
+    background-color: yellow;
+    border-radius: 50%;
+}
+.tile:nth-child(3) .player-mark1 {
+    opacity: 0;
 }
