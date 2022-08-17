@@ -9,7 +9,7 @@ body {
     justify-content: center;
     perspective: 1000px;
     color: black;
-    background: #b0c4de;
+    background: #f27059;
 }
 
 .board {
@@ -24,6 +24,7 @@ body {
 
 .tile {
     border: 1px solid black;
+    background-color: #ffffff80;
     position: relative;
     transform-style: preserve-3d;
 }
@@ -318,6 +319,7 @@ div.chatContainer>p>input[type="text"]{
     background: url('../images/hotel.png');
     background-size: contain;
 }
+/* 주사위 */
 #dice {
     position: absolute;
     top: 50%;
@@ -326,6 +328,16 @@ div.chatContainer>p>input[type="text"]{
     width: 12vmin;
     height: 12vmin;
     background-color: black;
+   	overflow: hidden;
+}
+#diceTrigger {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ffd04699;
+	z-index: 999;
 }
 #dice > input {
     display: inline-block;
@@ -334,5 +346,4 @@ div.chatContainer>p>input[type="text"]{
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
 }
