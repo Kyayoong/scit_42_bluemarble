@@ -21,7 +21,52 @@
             $('#pl2').hover(visibleP2, hiddenP2);
             $('#pl3').hover(visibleP3, hiddenP3);
             $('#pl4').hover(visibleP4, hiddenP4);
+            
         })
+        
+        let diceResult = 0;
+        let playerid = 1; // 플레이어 아이디 추후 수정 필요
+        let afterLocation = 0;
+        
+        // 플레이어에 따른 "현재 위치 + 주사위 결과"로 이동 후 위치 값 반환
+		function presentLocation(){
+        	$.ajax({
+        		url : 'presentLocation',
+        		type : 'post',
+        		data : {playerid : playerid},
+        		dataType : 'json',
+        		success : function(presentLocation){
+        			// 기존 위치 + 주사위 값의 결과를 이동 후 위치로 변수의 값 갱신
+        			afterLocation = presentLocation + diceResult;
+
+        			// 현 위치 + 주사위 값 한 결과를 DB로 보내 LOCATION 컬럼 갱신
+        			updateLocation(afterLocation);
+			        
+			        // 기존 위치와 이동 후 위치로 이동 효과 적용할 부분
+			        // ==>
+        		},
+        		error : function(e){
+        			console.log(JSON.stringify(e));
+        		}
+        	})
+        }
+        
+        // location 변동 update 완성하기
+        // 현 위치 + 주사위 값 한 결과를 DB로 보내 LOCATION 컬럼 갱신
+        function updateLocation(afterLocation){
+        	$.ajax({
+        		url : 'updateLocation',
+        		type : 'post',
+        		data : {afterLocation : afterLocation},
+        		success : function(){
+        			alert('Location Updated!');
+        		}, 
+        		error : function(e){
+        			console.log(JSON.stringify());
+        		} 
+        	})
+        }
+        
         function visibleP1(){
             $('#playerInfo1').css('visibility', 'visible');
         }
@@ -68,20 +113,20 @@
                     }
                 }, 10);
             });
+            
             // 주사위 버튼에서 손을 떼면 주사위 이벤트 트리거 혹은 게이지 떨어뜨리는 이벤트
             dice.addEventListener('mouseup', () => {
                 clearInterval(mousedown);
                 mouseup = setInterval(() => {
                     if (top <= 0) {
                         //주사위 굴리는 이벤트 실행
-                        let number1 = Math.floor(Math.random()*(6))+1
-						let number2 = Math.floor(Math.random()*(6))+1
+                        let dice1 = Math.floor(Math.random()*(6))+1
+						let dice2 = Math.floor(Math.random()*(6))+1
                         
-						console.log('number1 = ' + number1);
-                        console.log('number2 = ' + number2);
-                        
+						diceResult = dice1 + dice2;
+						
                         clearInterval(mouseup);
-                        
+
                         top = 100;
                         diceTrigger.style.top = `${top}%`;
                         return;
