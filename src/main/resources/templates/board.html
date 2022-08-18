@@ -73,7 +73,16 @@
                 mouseup = setInterval(() => {
                     if (top <= 0) {
                         //주사위 굴리는 이벤트 실행
+                        let number1 = Math.floor(Math.random()*(6))+1
+						let number2 = Math.floor(Math.random()*(6))+1
+                        
+						console.log('number1 = ' + number1);
+                        console.log('number2 = ' + number2);
+                        
                         clearInterval(mouseup);
+                        
+                        top = 100;
+                        diceTrigger.style.top = `${top}%`;
                         return;
                     }
                     if (top <= 100) {
