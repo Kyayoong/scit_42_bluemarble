@@ -307,18 +307,38 @@ div.chatContainer>p>input[type="text"]{
     transform: translateX(-50%) translateY(-50%) rotate();
     position: fixed;
 }
-
+/*호텔*/
 .hotel {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%) rotateX(90deg);
+    transform: translateX(-50%) translateY(-50%) translateZ(10px) rotateX(90deg);
     width: 20px;
     height: 20px;
     /* 배열로 각 건물 level에 따라 표기되는 그림이 달라짐. */
     background: url('../images/hotel.png');
     background-size: contain;
 }
+/*입체호텔 (제쟉중)*/
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.cube__face {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
+.cube__face--front  { transform: rotateY(  0deg) translateZ(10px); }
+.cube__face--right  { transform: rotateY( 90deg) translateZ(10px); }
+.cube__face--back   { transform: rotateY(180deg) translateZ(10px); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ(10px); }
+.cube__face--top    { transform: rotateX( 90deg) translateZ(10px); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(10px); }
 /* 주사위 */
 #dice {
     position: absolute;
