@@ -396,6 +396,7 @@ div.chatContainer>p>input[type="text"]{
     height: 0.8vmin;
     background-color: blue;
     border-radius: 50%;
+    opacity: 0;
 }
 .player-mark2 {
     display: inline-block;
@@ -403,6 +404,7 @@ div.chatContainer>p>input[type="text"]{
     height: 0.8vmin;
     background-color: red;
     border-radius: 50%;
+    opacity: 0;
 }
 .player-mark3 {
     display: inline-block;
@@ -410,6 +412,7 @@ div.chatContainer>p>input[type="text"]{
     height: 0.8vmin;
     background-color: green;
     border-radius: 50%;
+    opacity: 0;
 }
 .player-mark4 {
     display: inline-block;
@@ -417,7 +420,9 @@ div.chatContainer>p>input[type="text"]{
     height: 0.8vmin;
     background-color: yellow;
     border-radius: 50%;
-}
-.tile:nth-child(3) .player-mark1 {
     opacity: 0;
+}
+/* 3번째타일에 있는 플레이어1의 말만 불이 들어온다. */
+.tile:nth-child(3) .player-mark1 {
+    opacity: 100;
 }
